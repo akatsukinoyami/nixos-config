@@ -6,6 +6,12 @@
       ../hardware/migaming-TM1801.nix # Include the results of the hardware scan.
     ];
 
+	nix.nixPath = [
+		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+		"nixos-config=/home/katsu/Documents/nixos/config/migaming-TM1801.nix"
+		"/nix/var/nix/profiles/per-user/root/channels"
+	];
+	
 	fileSystems = {
 	}
 	// (builtins.mapAttrs (name: value: { device = value; fsType = "ntfs"; options = ["rw" "uid=1000"]; }) {
