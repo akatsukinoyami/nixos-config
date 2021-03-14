@@ -8,7 +8,7 @@
 
 	nix.nixPath = [
 		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-		"nixos-config=/home/katsu/Documents/nixos/config/migaming-TM1801.nix"
+		"nixos-config=/home/katsu/nixos-config/config/zenbook-UX303LB.nix"
 		"/nix/var/nix/profiles/per-user/root/channels"
 	];
 
