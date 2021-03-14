@@ -17,7 +17,7 @@
 	// (builtins.mapAttrs (name: value: { device = value; fsType = "ntfs"; options = ["rw" "uid=1000"]; }) {
 		"/home/katsu/Files"     = "/dev/sdb6";
 		"/home/katsu/Windows"   = "/dev/sdb4";
-		"/home/katsu/HDD"       = "/dev/sda2";
+		"/home/katsu/Documents" = "/dev/sda2";
 	})
 	// (builtins.mapAttrs (name: value: { device = value; options = ["bind"]; }) {
 		"/home/katsu/Desktop"   = "/home/katsu/Files/Desktop";
