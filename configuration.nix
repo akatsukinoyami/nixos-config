@@ -167,6 +167,7 @@
   	shellAliases = {
 		pls = "sudo";
 		tsu-conf = "sudo nano -l /etc/nixos/configuration.nix";
+		tsu-push = "cd ~/Documents/nixos/ && git add * && git commit -m 'one more commit' && git push -u origin master";
 		tsu-switch = "sudo nixos-rebuild switch";
 		tsu-boot = "sudo nixos-rebuild boot";
 		tsu-py = "nix-shell -p 'python38.withPackages(ps: with ps; [ ])'
