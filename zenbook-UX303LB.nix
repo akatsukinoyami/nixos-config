@@ -1,18 +1,24 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-	imports = [ 
-		../config.nix
-        ../hardware/zenbook-UX303LB.nix # Include the results of the hardware scan.
-    ];
+	imports = [./config.nix];
 
-	nix.nixPath = [
-		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-		"nixos-config=/home/katsu/nixos-config/config/zenbook-UX303LB.nix"
-		"/nix/var/nix/profiles/per-user/root/channels"
-	];
+  boot.initrd = {
+		availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+		kernelModules = [ ];
+	};
+
+  swapDevices = [ { device = "/dev/disk/by-uuid/60d3da8a-1f53-4cfb-a73f-4861be804931"; } ];
 
 	fileSystems = {
+		"/" = { 
+      device = "/dev/disk/by-uuid/45374fe2-5c93-41d3-aede-1444446eec11";
+      fsType = "ext4";
+    };
+  	"/boot" = { 
+      device = "/dev/disk/by-uuid/04A4-E15B";
+      fsType = "vfat";
+    };
 	}
 	// (builtins.mapAttrs (name: value: { device = value; fsType = "ntfs"; options = ["rw" "uid=1000"]; }) {
 		"/home/katsu/Files"     = "/dev/sdb6";
@@ -26,6 +32,12 @@
 		"/home/katsu/Music"     = "/home/katsu/Files/Music";
 		"/home/katsu/Videos"    = "/home/katsu/Files/Videos";
 	});
+
+	nix.nixPath = [
+		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+		"nixos-config=/home/katsu/nixos-config/zenbook-UX303LB.nix"
+		"/nix/var/nix/profiles/per-user/root/channels"
+	];
 
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
