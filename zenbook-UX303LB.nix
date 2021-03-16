@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-	imports = [./config.nix];
+	imports = [./common/config.nix];
 
   boot.initrd = {
 		availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
