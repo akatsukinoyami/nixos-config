@@ -19,6 +19,7 @@
 			neofetch
 			home-manager
 			mtpfs
+			nodejs
 			ntfs3g
 			openssh
 			pcmanfm-qt
