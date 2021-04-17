@@ -9,7 +9,7 @@
 		shell = pkgs.fish;
 		isNormalUser = true;
 		description = "Akatsuki no Yami";
-		extraGroups = ["wheel" "docker" "adbusers" "scanner" "lp"];
+		extraGroups = ["wheel" "audio" "docker" "adbusers" "scanner" "lp"];
 		hashedPassword = "$6$3KDmBJnJaypvGzJ$WzHALHk1BdDvOgmFR7/lJm6JLljRs1lMr6UBpmmh.sWSJM/VufMUUawBVGNrB8Dt60UkEQKkTHGOodaP3r7gL0";
   };
 }

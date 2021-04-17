@@ -14,6 +14,7 @@
 			evtest
 			gparted
 			fish
+			jetbrains.jdk
 			gitFull
 			goldendict
 			neofetch
@@ -27,7 +28,6 @@
 			pulseaudioFull
 			screenfetch
 			sshfs
-			steam
 			tdesktop
 			tilda
 			tilix
@@ -48,14 +48,35 @@
   # };
 
 	programs = {
-		fish.enable = true;
 		adb.enable = true;
-	#	git = {
-	#		enable = true;
-	#   userName  = "akatsukinoyami";
-	#   userEmail = "akatsukinoyami@yahoo.com";
-	#	};
+		fish.enable = true;
+		light.enable = true;
+#		sway = {
+#			enable = true;
+#			wrapperFeatures.gtk = true; # so that gtk works properly
+#			extraPackages = with pkgs; [
+#				swaylock
+#				swayidle
+#				wl-clipboard
+#				mako # notification daemon
+#				waybar
+#				wofi 
+#			];
+#		};
+#  		steam.enable = true;
+#		git = {
+#			enable = true;
+#			userName  = "akatsukinoyami";
+#			userEmail = "akatsukinoyami@yahoo.com";
+#		};
   };
 
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config = {
+		allowUnfree = true;
+# 		packageOverrides = pkgs: {
+#			steam = pkgs.steam.override {
+#				nativeOnly = true;
+#   			};
+#  		};
+	};
 }
