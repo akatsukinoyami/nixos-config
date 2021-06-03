@@ -12,6 +12,7 @@
 			docker-compose
 			elisa
 			evtest
+			ffmpeg
 			gparted
 			fish
 			jetbrains.jdk
@@ -23,6 +24,7 @@
 			nodejs
 			ntfs3g
 			openssh
+			p7zip
 			pcmanfm-qt
 			ppsspp
 			pulseaudioFull

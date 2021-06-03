@@ -10,6 +10,10 @@
 			enable = true;
 			ethernet.macAddress = "random";
 		};
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 25 80 443 12000 ];
+    };
 	  #wireless.enable = true;  		# Enables wireless support via wpa_supplicant.
   };
 

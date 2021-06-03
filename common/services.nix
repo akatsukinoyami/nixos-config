@@ -3,15 +3,15 @@
 {
   # List services that you want to enable:
   services = {
-		 xserver = {
+		xserver = {
 		 	enable = true;						#Enable the X11 windowing system.
 		 	displayManager = {
-		 		gdm.enable = false;
+		 		#gdm.enable = false;
 		 		lightdm.enable = true;
 		 	};
 		 	desktopManager = {
-		 		gnome3.enable = false;
-		 		mate.enable = false;
+		 		#gnome3.enable = false;
+		 		#mate.enable = false;
 		 		pantheon.enable = true;
 		 	};
 		 	videoDrivers = ["displaylink" "modesetting"];
@@ -21,7 +21,12 @@
 		sshd.enable = true;
 		openssh.enable = true;  		#Enable the OpenSSH daemon.
 		printing.enable = true;   	#Enable CUPS to print documents.
-  };
+  	};
 
 	virtualisation.docker.enable = true;
+
+	plex = {
+		enable = true;
+		openFirewall = true;
+	};
 }

@@ -3,7 +3,7 @@
 {
 	imports = [./common/config.nix];
 
-  boot.initrd = {
+  	boot.initrd = {
 		availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 		kernelModules = [ ];
 	};
@@ -12,13 +12,13 @@
 
 	fileSystems = {
 		"/" = { 
-      device = "/dev/disk/by-uuid/45374fe2-5c93-41d3-aede-1444446eec11";
-      fsType = "ext4";
-    };
-  	"/boot" = { 
-      device = "/dev/disk/by-uuid/04A4-E15B";
-      fsType = "vfat";
-    };
+			device = "/dev/disk/by-uuid/45374fe2-5c93-41d3-aede-1444446eec11";
+			fsType = "ext4";
+		};
+		"/boot" = { 
+			device = "/dev/disk/by-uuid/04A4-E15B";
+			fsType = "vfat";
+		};
 	}
 	// (builtins.mapAttrs (name: value: { device = value; fsType = "ntfs"; options = ["rw" "uid=1000"]; }) {
 		"/home/katsu/Files"     = "/dev/sdb6";
