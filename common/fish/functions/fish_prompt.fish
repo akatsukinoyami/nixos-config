@@ -21,3 +21,11 @@ end
 function nix-python --description 'start a nix-shell with the given python packages' --argument argv
 	nix-shell -p "python38.withPackages(ps: with ps; [ $argv ])"
 end
+
+function tsu-deploy --description 'deploy to all workspaces' --argument argv
+	git add * 
+	git commit -m $argv
+	git push origin master
+	git push heroku master
+	firebase deploy
+end
