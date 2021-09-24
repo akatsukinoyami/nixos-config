@@ -3,12 +3,12 @@
 {
 	imports = [./common/config.nix];
 
-  	boot.initrd = {
+	boot.initrd = {
 		availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 		kernelModules = [ ];
 	};
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/60d3da8a-1f53-4cfb-a73f-4861be804931"; } ];
+	swapDevices = [ { device = "/dev/disk/by-uuid/60d3da8a-1f53-4cfb-a73f-4861be804931"; } ];
 
 	fileSystems = {
 		"/" = { 
@@ -40,18 +40,18 @@
 	];
 
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-
-  networking = {
+	# Per-interface useDHCP will be mandatory in the future, so this generated config
+	# replicates the default behaviour.	
+	
+	networking = {
 		hostName = "katsu-zenbook";
-  	    interfaces = {
+		interfaces = {
             enp0s20u2.useDHCP = true;
             wlp2s0.useDHCP = true;
 		};
-  };
+	};
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+	# Configure network proxy if necessary
+	# networking.proxy.default = "http://user:password@proxy:port/";
+	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 }

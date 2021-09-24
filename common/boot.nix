@@ -1,18 +1,18 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 { 
-	imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+	imports =	[ 
+		(modulesPath + "/installer/scan/not-detected.nix")
+	];
 
-  boot = {
+	boot = {
 		kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-		loader = {
-			systemd-boot.enable = true;				#Use the systemd-boot EFI boot loader.
-			efi.canTouchEfiVariables = true;
+		extraModulePackages = [ ];
+			loader = {
+				systemd-boot.enable = true;				#Use the systemd-boot EFI boot loader.
+				efi.canTouchEfiVariables = true;
+			};
 		};
-	};
 
 	powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

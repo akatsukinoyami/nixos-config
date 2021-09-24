@@ -3,12 +3,12 @@
 {
 	imports = [./common/config.nix];
 
-  	boot.initrd = {
+	boot.initrd = {
 		availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
 		kernelModules = [ ];
 	}; 
 
-  	swapDevices = [ ];
+	swapDevices = [ ];
 	
 	fileSystems = { 
 		"/" = { 
@@ -41,18 +41,18 @@
 	];
 
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
+	# Per-interface useDHCP will be mandatory in the future, so this generated config
+	# replicates the default behaviour.
 
-  	networking = {
+	networking = {
 		hostName = "katsu-migaming";
 		interfaces = {
 			enp8s0.useDHCP = true;
 			wlp0s20f3.useDHCP = true;
 		};
-  	};
-  
-  	systemd.services.hd-idle = {
+	};
+
+	systemd.services.hd-idle = {
 		description = "External HD spin down daemon";
 		wantedBy = [ "multi-user.target" ];
 		serviceConfig = {
@@ -61,7 +61,7 @@
 		};
 	};
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+	# Configure network proxy if necessary
+	# networking.proxy.default = "http://user:password@proxy:port/";
+	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 }

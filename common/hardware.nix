@@ -1,19 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  hardware = {
-		pulseaudio = {
-			enable = true;
-			package = pkgs.pulseaudioFull;
-		};
-		bluetooth.enable = true;
+	hardware = {
 		sane = {
 			enable = true;
 			extraBackends = [ pkgs.hplipWithPlugin ];
-  	};
-  };
+		};
+#		pulseaudio = {
+#			enable = true;
+#			package = pkgs.pulseaudioFull;
+#		};
+#		bluetooth.enable = true;
+	};
 
-  sound = {
+	sound = {
 		enable = true;   # Enable sound.
 		mediaKeys = {
 			enable = true;
