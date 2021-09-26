@@ -29,3 +29,38 @@ function tsu-deploy --description 'deploy to all workspaces' --argument argv
 	git push heroku master
 	firebase deploy
 end
+
+
+function youtube-mp3 --description '' --argument argv
+	set command '
+		echo Using link: '$argv'
+		echo "DOWNLOADING AUDIO"
+		youtube-dl --extract-audio --audio-format mp3 '$argv'
+		echo "DOWNLOADING FINISHED"
+		'
+
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
+end
+function youtube --description '' --argument argv
+	set command '
+		echo Using link: '$argv'
+		echo "DOWNLOADING VIDEO"
+		youtube-dl  '$argv'
+		echo "DOWNLOADING FINISHED"
+		'
+
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
+end
+function youtube-both --description '' --argument argv
+	
+	set command '
+		echo Using link: '$argv'
+		echo "DOWNLOADING AUDIO"
+		youtube-dl --extract-audio --audio-format mp3 '$argv'
+		echo "DOWNLOADING VIDEO"
+		youtube-dl  '$argv'
+		echo "DOWNLOADING FINISHED"
+		'
+
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
+end

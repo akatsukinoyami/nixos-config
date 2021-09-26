@@ -14,13 +14,8 @@
 
 		ext-gpu			= "env DRI_PRIME=1";
 
-		tg-nyan 		= "telegram-desktop -many -workdir ~/.telegram/nyawoobot";
-		tg-it			= "telegram-desktop -many -workdir ~/.telegram/it";
-		tg-lewd 		= "telegram-desktop -many -workdir ~/.telegram/lewd";
-
-		nix-youtube		= "nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run";
-		youtube 		= "nix-youtube 'youtube-dl '";
-		youtube-mp3 	= "nix-youtube 'youtube-dl --extract-audio --audio-format mp3 '";
+		tg-news			= "telegram-desktop -many -workdir ~/.telegram/news";
+		tg-game 		= "telegram-desktop -many -workdir ~/.telegram/game";
 
 	};
 }
