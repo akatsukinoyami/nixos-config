@@ -49,6 +49,15 @@
 		wineWowPackages.stable
 		wget
 		youtube-dl
+
+    # For wayland
+    autotiling
+    mako # notification daemon
+		swayidle
+    swaylock
+		waybar
+		wl-clipboard
+		wofi 
 	];
 
 	# Some programs need SUID wrappers, can be configured further or are
@@ -63,19 +72,20 @@
 		adb.enable = true;
 		fish.enable = true;
 		light.enable = true;
-#  		steam.enable = true;
-#		sway = {
-#			enable = true;
-#			wrapperFeatures.gtk = true; # so that gtk works properly
-#			extraPackages = with pkgs; [
-#				swaylock
-#				swayidle
-#				wl-clipboard
-#				mako # notification daemon
-#				waybar
-#				wofi 
-#			];
-#		};
+#  	steam.enable = true;
+		sway = {
+			enable = true;
+			wrapperFeatures.gtk = true; # so that gtk works properly
+			extraPackages = with pkgs; [
+        autotiling
+        mako # notification daemon
+        swayidle
+        swaylock
+        waybar
+        wl-clipboard
+        wofi 
+			];
+		};
   };
 
 	nixpkgs.config = {

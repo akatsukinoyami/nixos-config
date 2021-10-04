@@ -5,12 +5,12 @@ function fish_prompt --description 'Informative prompt'
 	switch "$USER"
 		case root toor
 			printf '%s@%s %s%s%s# ' $USER (prompt_hostname) (set -q fish_color_cwd_root
-															 and set_color $fish_color_cwd_root
-															 or set_color $fish_color_cwd) \
+															and set_color $fish_color_cwd_root
+															or set_color $fish_color_cwd) \
 				(prompt_pwd) (set_color normal)
 		case '*'
 			set -l pipestatus_string (__fish_print_pipestatus "[" "] " "|" (set_color $fish_color_status) \
-									  (set_color --bold $fish_color_status) $last_pipestatus)
+									(set_color --bold $fish_color_status) $last_pipestatus)
 
 			printf '[%s] %s%s@%s %s%s %s%s%s \f\r> ' (date "+%H:%M:%S") (set_color brblue) \
 				$USER (prompt_hostname) (set_color $fish_color_cwd) $PWD $pipestatus_string \
@@ -30,7 +30,6 @@ function tsu-deploy --description 'deploy to all workspaces' --argument argv
 	firebase deploy
 end
 
-
 function youtube-mp3 --description '' --argument argv
 	set command '
 		echo Using link: '$argv'
@@ -38,9 +37,9 @@ function youtube-mp3 --description '' --argument argv
 		youtube-dl --extract-audio --audio-format mp3 '$argv'
 		echo "DOWNLOADING FINISHED"
 		'
-
 	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
 end
+
 function youtube --description '' --argument argv
 	set command '
 		echo Using link: '$argv'
@@ -48,11 +47,10 @@ function youtube --description '' --argument argv
 		youtube-dl  '$argv'
 		echo "DOWNLOADING FINISHED"
 		'
-
 	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
 end
+
 function youtube-both --description '' --argument argv
-	
 	set command '
 		echo Using link: '$argv'
 		echo "DOWNLOADING AUDIO"
@@ -61,6 +59,5 @@ function youtube-both --description '' --argument argv
 		youtube-dl  '$argv'
 		echo "DOWNLOADING FINISHED"
 		'
-
 	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
 end

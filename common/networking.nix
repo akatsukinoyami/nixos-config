@@ -15,7 +15,7 @@
       allowedTCPPorts = [ 25 80 443 12000 50001 50002];
       allowedUDPPorts = [ 1900 ];
     };
-	  #wireless.enable = true;  		# Enables wireless support via wpa_supplicant.
+    #wireless.enable = true;  		# Enables wireless support via wpa_supplicant.
   };
 
 	# Configure network proxy if necessary
