@@ -50,11 +50,11 @@
 		wget
 		youtube-dl
 
-    # For wayland
-    autotiling
-    mako # notification daemon
+		# For wayland
+		autotiling
+		mako # notification daemon
 		swayidle
-    swaylock
+    		swaylock
 		waybar
 		wl-clipboard
 		wofi 
@@ -72,20 +72,20 @@
 		adb.enable = true;
 		fish.enable = true;
 		light.enable = true;
-#  	steam.enable = true;
-		sway = {
-			enable = true;
-			wrapperFeatures.gtk = true; # so that gtk works properly
-			extraPackages = with pkgs; [
-        autotiling
-        mako # notification daemon
-        swayidle
-        swaylock
-        waybar
-        wl-clipboard
-        wofi 
-			];
-		};
+#  		steam.enable = true;
+#		sway = {
+#			enable = true;
+#			wrapperFeatures.gtk = true; # so that gtk works properly
+#			extraPackages = with pkgs; [
+#        autotiling
+#        mako # notification daemon
+#        swayidle
+#        swaylock
+#        waybar
+#        wl-clipboard
+#        wofi 
+#			];
+#		};
   };
 
 	nixpkgs.config = {
