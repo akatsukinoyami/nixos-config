@@ -43,18 +43,18 @@
 		tdesktop
 		tilda
 		tilix
+		gthumb
 		ktorrent
 		vlc
 		vscode
 		wineWowPackages.stable
 		wget
 		youtube-dl
-
 		# For wayland
 		autotiling
 		mako # notification daemon
 		swayidle
-    		swaylock
+		swaylock
 		waybar
 		wl-clipboard
 		wofi 
