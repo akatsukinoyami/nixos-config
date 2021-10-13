@@ -3,7 +3,10 @@
 {
 # List packages installed in system profile. To search, run:
 # $ nix search wget
-	nix.package = pkgs.nixUnstable;
+	nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = "experimental-features = flakes ca-references nix-command";
+  };
 	nixpkgs.config = {
 		allowUnfree = true;
 	};
