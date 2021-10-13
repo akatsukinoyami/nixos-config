@@ -11,7 +11,8 @@
       };
       desktopManager = {
         mate.enable = false;
-        gnome.enable = true;
+        gnome.enable = false;
+        plasma5.enable = true;
         pantheon.enable = false;
       };
       videoDrivers = ["displaylink" "modesetting"];

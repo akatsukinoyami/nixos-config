@@ -11,62 +11,64 @@
 		allowUnfree = true;
 	};
 
-	environment.systemPackages = with pkgs; [
-		arandr
-		audacity
-		chromium
-		discord
-		docker-compose
-		elisa
-		evtest
-		ffmpeg
-		google-chrome
-		gparted
-		fish
-		fishPlugins.fzf-fish
-		fishPlugins.forgit
-		jetbrains.jdk
-		gitFull
-		goldendict
-		neofetch
-		heroku
-		home-manager
-		mtpfs
-		nodejs
-		nodePackages.firebase-tools
-		ntfs3g
-		openssh
-		p7zip
-		pcmanfm-qt
-		ppsspp
-		pulseaudioFull
-		rhythmbox
-		slack
-		screenfetch
-		softmaker-office
-		sshfs
-		steam-run-native
-		sublime
-		tdesktop
-		tilda
-		tilix
-		gthumb
-		ktorrent
-		vlc
-		vscode
-		wineWowPackages.stable
-		wget
-		youtube-dl
-		
-		# For wayland
-		autotiling
-		mako # notification daemon
-		swayidle
-		swaylock
-		waybar
-		wl-clipboard
-		wofi 
-	];
+	environment = {
+		systemPackages = with pkgs; [
+			arandr
+			audacity
+			chromium
+			discord
+			docker-compose
+			elisa
+			evtest
+			ffmpeg
+			google-chrome
+			gparted
+			fish
+			fishPlugins.fzf-fish
+			fishPlugins.forgit
+			jetbrains.jdk
+			gitFull
+			goldendict
+			neofetch
+			heroku
+			home-manager
+			mtpfs
+			nodejs
+			nodePackages.firebase-tools
+			ntfs3g
+			openssh
+			p7zip
+			pcmanfm-qt
+			ppsspp
+			pulseaudioFull
+			rhythmbox
+			slack
+			screenfetch
+			softmaker-office
+			sshfs
+			steam-run-native
+			sublime
+			tdesktop
+			tilda
+			tilix
+			gthumb
+			ktorrent
+			vlc
+			vscode
+			wineWowPackages.stable
+			wget
+			youtube-dl
+			
+			# For wayland
+			autotiling
+			mako # notification daemon
+			swayidle
+			swaylock
+			waybar
+			wl-clipboard
+			wofi 
+		];
+	};
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
