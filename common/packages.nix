@@ -15,8 +15,10 @@
 			vscode
 
             #INTERNET
+			firefox-wayland
 			chromium
 			google-chrome
+			tor-browser-bundle-bin
 
 			discord
 			tdesktop
