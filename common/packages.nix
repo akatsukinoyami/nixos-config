@@ -1,11 +1,19 @@
 { config, pkgs, ... }:
 {
+	nixpkgs.config.allowUnfree = true;
 	nix = {
 		package = pkgs.nixUnstable;
 		extraOptions = "experimental-features = flakes ca-references nix-command";
 	};
-	nixpkgs.config.allowUnfree = true;
-	
+	programs = {
+		adb.enable = true;
+		fish.enable = true;
+		light.enable = true;
+		gnupg.agent = {
+			enable = true;
+			enableSSHSupport = true;
+		};
+	};
 	environment = {						# List packages installed in system profile. 
 		systemPackages = with pkgs; [	# To search, run: $ nix search wget
 			p7zip
@@ -44,8 +52,6 @@
 			elisa
 			evtest
 			gitFull
-			gnome3.gnome-tweaks
-			gnomeExtensions.appindicator
 			gparted
 			jetbrains.jdk
 			home-manager
@@ -63,11 +69,16 @@
 			winetricks
 			wineWowPackages.stable
 
+			#GNOME
+			dconf2nix
+			gnome-breeze
+			gnome3.adwaita-icon-theme
+			gnome3.gnome-tweaks
+			gnomeExtensions.appindicator
+
 			#GTK
 			adapta-gtk-theme
 			arc-theme
-			gnome-breeze
-			gnome3.adwaita-icon-theme
 			materia-theme
 
 			vanilla-dmz
@@ -104,14 +115,4 @@
 #   enable = true;
 #   enableSSHSupport = true;
 # };
-
-	programs = {
-		adb.enable = true;
-		fish.enable = true;
-		light.enable = true;
-		gnupg.agent = {
-			enable = true;
-			enableSSHSupport = true;
-		};
-	};
 }
