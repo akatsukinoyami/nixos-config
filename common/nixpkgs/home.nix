@@ -1,3 +1,10 @@
+{config, pkgs, ...}:
 {
-	home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
+	xsession = {
+		pointerCursor = {
+			package = pkgs.gnome.adwaita-icon-theme;
+			name = "Adwaita";
+			size = 38;
+		};
+	};
 }
