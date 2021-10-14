@@ -10,7 +10,6 @@
 	nixpkgs.config = {
 		allowUnfree = true;
 	};
-
 	environment = {
 		systemPackages = with pkgs; [
 			arandr
@@ -21,6 +20,7 @@
 			elisa
 			evtest
 			ffmpeg
+			gnome3.gnome-tweaks
 			google-chrome
 			gparted
 			fish

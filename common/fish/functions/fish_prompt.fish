@@ -26,20 +26,8 @@ function tsu-deploy --description 'deploy to all workspaces' --argument argv
 	git add * 
 	git commit -m $argv
 	git push origin master
-	git push heroku master
 	firebase deploy
 end
-
-function youtube-mp3 --description '' --argument argv
-	set command '
-		echo Using link: '$argv'
-		echo "DOWNLOADING AUDIO"
-		youtube-dl --extract-audio --audio-format mp3 '$argv'
-		echo "DOWNLOADING FINISHED"
-		'
-	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
-end
-
 function youtube --description '' --argument argv
 	set command '
 		echo Using link: '$argv'
@@ -49,7 +37,15 @@ function youtube --description '' --argument argv
 		'
 	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
 end
-
+function youtube-mp3 --description '' --argument argv
+	set command '
+		echo Using link: '$argv'
+		echo "DOWNLOADING AUDIO"
+		youtube-dl --extract-audio --audio-format mp3 '$argv'
+		echo "DOWNLOADING FINISHED"
+		'
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
+end
 function youtube-both --description '' --argument argv
 	set command '
 		echo Using link: '$argv'
@@ -61,3 +57,36 @@ function youtube-both --description '' --argument argv
 		'
 	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $command
 end
+
+function tsu-help --description 'post help message' -argument argv
+	switch $argv
+		case 'pls'
+			echo 'Alias for sudo'
+		case 'ext-gpu'
+			echo 'Alias for executing application with nVidia GPU.'
+		case 'tsu-boot'
+			echo 'Alias for nixos-rebuild with reboot'
+		case 'tsu-switch'
+			echo 'Alias for nixos-rebuild without reboot and push config to github'
+		case 'tsu-push-config'
+			echo 'Alias for making commit of nixos-config and push to github'
+		case 'tsu-clean'
+			echo 'Alias for clean nixos-collect-garbage'
+		case 'tsu-conf'
+			echo 'Alias for open VSCode with nixos-config folder'
+		case 'tsu-bots'
+			echo 'Alias for open VSCode with python-bots folder'
+		case 'tsu-work'
+			echo 'Alias for open VSCode with work folder'
+    case 'tsu-help'
+      echo 'Print this message'
+    case '*'
+      echo '''Aliases in system: 
+
+  pls, ext-gpu, tsu-boot, tsu-switch, tsu-push-config, tsu-clean, 
+  tsu-conf, tsu-bots, tsu-work, tsu-help
+  
+Write tsu-help /some-alias/ for info about it.'''
+  end
+end
+

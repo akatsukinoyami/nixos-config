@@ -6,14 +6,14 @@
     xserver = {
       enable = true;       #Enable the X11 windowing system.
       displayManager = {
-        gdm.enable = true;
         lightdm.enable = false;
+        gdm.enable = true;
       };
       desktopManager = {
         mate.enable = false;
-        gnome.enable = true;
         plasma5.enable = false;
         pantheon.enable = false;
+        gnome.enable = true;
       };
       videoDrivers = ["displaylink" "modesetting"];
       layout = "us";
@@ -28,11 +28,5 @@
   };
 
   virtualisation.docker.enable = true;
-
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = false;
-    channel = https://nixos.org/channels/nixos-unstable;
-  };
 }
 
