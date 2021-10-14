@@ -8,6 +8,7 @@
 	
 	environment = {						# List packages installed in system profile. To search, run:
 		systemPackages = with pkgs; [	# $ nix search wget
+			arc-theme
 			p7zip
 			pcmanfm-qt
 			softmaker-office

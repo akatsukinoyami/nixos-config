@@ -24,7 +24,13 @@
         mate.enable = false;
         plasma5.enable = false;
         pantheon.enable = false;
-        gnome.enable = true;
+        gnome = {
+          enable = true;
+          extraGSettingsOverrides = "
+            [org.gnome.desktop.interface]
+            gtk-theme='Arc-Dark'
+          ";
+        };
       };
       videoDrivers = ["displaylink" "modesetting"];
       layout = "us";
