@@ -6,8 +6,8 @@
 	};
 	nixpkgs.config.allowUnfree = true;
 	
-	environment = {						# List packages installed in system profile. To search, run:
-		systemPackages = with pkgs; [	# $ nix search wget
+	environment = {						# List packages installed in system profile. 
+		systemPackages = with pkgs; [	# To search, run: $ nix search wget
 			p7zip
 			pcmanfm-qt
 			softmaker-office
@@ -70,8 +70,11 @@
 
 			vanilla-dmz
 			kde-gtk-config
-			xorg.xcursorthemes
 			lxappearance
+			
+			#XORG
+			xorg.xinit
+			xorg.xcursorthemes
 
             #FISH
 			fish
@@ -81,6 +84,7 @@
 			#SWAY
 			autotiling
 			mako #notification daemon
+			sway
 			swayidle
 			swaylock
 			waybar
@@ -99,7 +103,6 @@
 
 	programs = {
 		adb.enable = true;
-		dconf.enable = true;
 		fish.enable = true;
 		light.enable = true;
 		gnupg.agent = {
