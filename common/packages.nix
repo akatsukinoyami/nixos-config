@@ -62,12 +62,15 @@
 			wineWowPackages.stable
 
 			#GTK
+			adapta-gtk-theme
 			arc-theme
 			gnome-breeze
+			gnome3.adwaita-icon-theme
 			materia-theme
 
 			vanilla-dmz
 			kde-gtk-config
+			xorg.xcursorthemes
 			lxappearance
 
             #FISH
