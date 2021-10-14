@@ -71,6 +71,8 @@
 			materia-theme
 
 			vanilla-dmz
+			capitaine-cursors
+			
 			kde-gtk-config
 			lxappearance
 			
