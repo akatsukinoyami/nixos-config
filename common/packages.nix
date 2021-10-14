@@ -66,6 +66,7 @@
 			gnome-breeze
 			materia-theme
 
+			vanilla-dmz
 			kde-gtk-config
 			lxappearance
 
