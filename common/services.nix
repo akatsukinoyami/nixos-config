@@ -6,14 +6,14 @@
     xserver = {
       enable = true;       #Enable the X11 windowing system.
       displayManager = {
-        lightdm.enable = false;
-        gdm.enable = true;
+        lightdm.enable = true;
+        gdm.enable = false;
       };
       desktopManager = {
         mate.enable = false;
         plasma5.enable = false;
-        pantheon.enable = false;
-        gnome.enable = true;
+        pantheon.enable = true;
+        gnome.enable = false;
       };
       videoDrivers = ["displaylink" "modesetting"];
       layout = "us";

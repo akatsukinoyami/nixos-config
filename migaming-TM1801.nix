@@ -3,11 +3,13 @@
 {
 	imports = [./common/config.nix];
 
-	boot.initrd = {
-		availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-		kernelModules = [ ];
-	}; 
-
+	boot = {
+		initrd = {
+			availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+			kernelModules = [ ];
+		}; 
+	};
+	
 	swapDevices = [ ];
 	
 	fileSystems = { 
@@ -34,11 +36,13 @@
 		"/home/katsu/Videos"	= "/home/katsu/HDD/Videos";
 	});
 
-	nix.nixPath = [
-		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-		"nixos-config=/home/katsu/nixos-config/migaming-TM1801.nix"
-		"/nix/var/nix/profiles/per-user/root/channels"
-	];
+	nix = {
+		nixPath = [
+			"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+			"nixos-config=/home/katsu/nixos-config/migaming-TM1801.nix"
+			"/nix/var/nix/profiles/per-user/root/channels"
+		];
+	};
 
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
 	# Per-interface useDHCP will be mandatory in the future, so this generated config

@@ -3,9 +3,11 @@
 {
 	imports = [./common/config.nix];
 
-	boot.initrd = {
-		availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-		kernelModules = [ ];
+	boot = {
+		initrd = {
+			availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+			kernelModules = [ ];
+		};
 	};
 
 	swapDevices = [ { device = "/dev/disk/by-uuid/60d3da8a-1f53-4cfb-a73f-4861be804931"; } ];
@@ -33,12 +35,14 @@
 		"/home/katsu/Videos"    = "/home/katsu/Files/Videos";
 	});
 
-	nix.nixPath = [
-		"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-		"nixos-config=/home/katsu/nixos-config/zenbook-UX303LB.nix"
-		"/nix/var/nix/profiles/per-user/root/channels"
-	];
-
+	nix = {
+		nixPath = [
+			"nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+			"nixos-config=/home/katsu/nixos-config/zenbook-UX303LB.nix"
+			"/nix/var/nix/profiles/per-user/root/channels"
+		];
+	}; 
+	
 	# The global useDHCP flag is deprecated, therefore explicitly set to false here.
 	# Per-interface useDHCP will be mandatory in the future, so this generated config
 	# replicates the default behaviour.	
