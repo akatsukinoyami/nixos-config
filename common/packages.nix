@@ -16,37 +16,36 @@
 
             #INTERNET
 			chromium
-			discord
 			google-chrome
+
+			discord
+			tdesktop
+			slack
+
 			heroku
 			nodePackages.firebase-tools
 			ktorrent
-			slack
-			tdesktop
 			wget
 			youtube-dl
 
             #MEDIA
-			audacity
-			ffmpeg
 			gthumb
-			ppsspp
+			audacity
 			rhythmbox
+			ffmpeg
 			vlc
+			ppsspp
             
 			#SYSTEM
 			arandr
-			arc-theme
 			docker-compose
 			elisa
 			evtest
 			gitFull
-			gnome-breeze
 			gnome3.gnome-tweaks
 			gnomeExtensions.appindicator
 			gparted
 			jetbrains.jdk
-			lxappearance
 			home-manager
 			mtpfs
 			neofetch
@@ -59,7 +58,16 @@
 			steam-run-native
 			tilda
 			tilix
+			winetricks
 			wineWowPackages.stable
+
+			#GTK
+			arc-theme
+			gnome-breeze
+			materia-theme
+
+			kde-gtk-config
+			lxappearance
 
             #FISH
 			fish
