@@ -8,7 +8,6 @@
 	
 	environment = {						# List packages installed in system profile. To search, run:
 		systemPackages = with pkgs; [	# $ nix search wget
-			arc-theme
 			p7zip
 			pcmanfm-qt
 			softmaker-office
@@ -26,6 +25,7 @@
 			tdesktop
 			wget
 			youtube-dl
+
             #MEDIA
 			audacity
 			ffmpeg
@@ -36,10 +36,12 @@
             
 			#SYSTEM
 			arandr
+			arc-theme
 			docker-compose
 			elisa
 			evtest
 			gitFull
+			gnome-breeze
 			gnome3.gnome-tweaks
 			gnomeExtensions.appindicator
 			gparted
