@@ -44,6 +44,7 @@
 			evtest
 			gitFull
 			gnome3.gnome-tweaks
+			gnomeExtensions.appindicator
 			gparted
 			jetbrains.jdk
 			neofetch
@@ -86,6 +87,7 @@
 
 	programs = {
 		adb.enable = true;
+		dconf.enable = true;
 		fish.enable = true;
 		light.enable = true;
 	};
