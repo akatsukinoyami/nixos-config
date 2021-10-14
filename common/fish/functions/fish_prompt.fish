@@ -61,32 +61,27 @@ end
 function tsu-help --description 'post help message' -argument argv
 	switch $argv
 		case 'pls'
-			echo 'Alias for sudo'
+			echo -e 'Alias for sudo'
 		case 'ext-gpu'
-			echo 'Alias for executing application with nVidia GPU.'
+			echo -e 'Alias for executing application with nVidia GPU.'
 		case 'tsu-boot'
-			echo 'Alias for nixos-rebuild with reboot'
+			echo -e 'Alias for nixos-rebuild with reboot'
 		case 'tsu-switch'
-			echo 'Alias for nixos-rebuild without reboot and push config to github'
+			echo -e 'Alias for nixos-rebuild without reboot and push config to github'
 		case 'tsu-push-config'
-			echo 'Alias for making commit of nixos-config and push to github'
+			echo -e 'Alias for making commit of nixos-config and push to github'
 		case 'tsu-clean'
-			echo 'Alias for clean nixos-collect-garbage'
+			echo -e 'Alias for clean nixos-collect-garbage'
 		case 'tsu-conf'
-			echo 'Alias for open VSCode with nixos-config folder'
+			echo -e '\033[36mAlias for open VSCode with nixos-config folder'
 		case 'tsu-bots'
-			echo 'Alias for open VSCode with python-bots folder'
+			echo -e '\033[36mAlias for open VSCode with python-bots folder'
 		case 'tsu-work'
-			echo 'Alias for open VSCode with work folder'
-    case 'tsu-help'
-      echo 'Print this message'
-    case '*'
-      echo '''Aliases in system: 
-
-  pls, ext-gpu, tsu-boot, tsu-switch, tsu-push-config, tsu-clean, 
-  tsu-conf, tsu-bots, tsu-work, tsu-help
-  
-Write tsu-help /some-alias/ for info about it.'''
-  end
+			echo -e '\033[36mAlias for open VSCode with work folder'
+		case 'tsu-help'
+			echo -e 'Print this message'
+		case '*'
+			echo -e 'Aliases in system:\n\n\t\033[33mpls, \033[33mext-gpu, \033[32mtsu-boot, \033[32mtsu-switch, \033[32mtsu-push-config, \033[32mtsu-clean,\n\t\033[36mtsu-conf, \033[36mtsu-bots, \033[36mtsu-work, \033[33mtsu-help\n\n\033[0mWrite tsu-help /some-alias/ for info about it.'
+	end
 end
 

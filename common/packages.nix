@@ -12,56 +12,62 @@
 	};
 	environment = {
 		systemPackages = with pkgs; [
-			arandr
-			audacity
+			p7zip
+			pcmanfm-qt
+			softmaker-office
+			sublime
+			vscode
+
+            #INTERNET
 			chromium
 			discord
+			google-chrome
+			heroku
+			nodePackages.firebase-tools
+			ktorrent
+			slack
+			tdesktop
+			wget
+			youtube-dl
+            #MEDIA
+			audacity
+			ffmpeg
+			gthumb
+			ppsspp
+			rhythmbox
+			vlc
+            
+			#SYSTEM
+			arandr
 			docker-compose
 			elisa
 			evtest
-			ffmpeg
-			gnome3.gnome-tweaks
-			google-chrome
-			gparted
-			fish
-			fishPlugins.fzf-fish
-			fishPlugins.forgit
-			jetbrains.jdk
 			gitFull
-			goldendict
+			gnome3.gnome-tweaks
+			gparted
+			jetbrains.jdk
 			neofetch
-			heroku
 			home-manager
 			mtpfs
 			nodejs
-			nodePackages.firebase-tools
 			ntfs3g
 			openssh
-			p7zip
-			pcmanfm-qt
-			ppsspp
 			pulseaudioFull
-			rhythmbox
-			slack
 			screenfetch
-			softmaker-office
 			sshfs
 			steam-run-native
-			sublime
-			tdesktop
 			tilda
 			tilix
-			gthumb
-			ktorrent
-			vlc
-			vscode
 			wineWowPackages.stable
-			wget
-			youtube-dl
-			
-			# For wayland
+
+            #FISH
+			fish
+			fishPlugins.fzf-fish
+			fishPlugins.forgit
+
+			#SWAY
 			autotiling
-			mako # notification daemon
+			mako #notification daemon
 			swayidle
 			swaylock
 			waybar
