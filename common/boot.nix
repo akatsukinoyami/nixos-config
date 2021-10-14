@@ -1,9 +1,6 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
+{ config, pkgs, modulesPath, ... }:
 { 
-	imports =	[ 
-		(modulesPath + "/installer/scan/not-detected.nix")
-	];
+	imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
 	boot = {
 		kernelModules = [ "kvm-intel" ];
@@ -13,6 +10,4 @@
 				efi.canTouchEfiVariables = true;
 			};
 		};
-
-	powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

@@ -7,7 +7,7 @@
     openssh.enable = true;  #Enable the OpenSSH daemon.
     printing = {       	    #Enable CUPS to print documents.
       enable = true;
-      drivers = pkgs.hplipWithPlugin;
+      drivers = with pkgs; [ hplipWithPlugin ];
     };	
     udev = {
       packages = with pkgs; [
@@ -31,7 +31,5 @@
       libinput.enable = true;   	#Enable touchpad support (enabled default in most desktopManager).
     };		
   };
-
-  virtualisation.docker.enable = true;
 }
 

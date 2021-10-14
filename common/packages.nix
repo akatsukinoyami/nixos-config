@@ -1,17 +1,13 @@
 { config, pkgs, ... }:
-
 {
-# List packages installed in system profile. To search, run:
-# $ nix search wget
 	nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = "experimental-features = flakes ca-references nix-command";
-  };
-	nixpkgs.config = {
-		allowUnfree = true;
+		package = pkgs.nixUnstable;
+		extraOptions = "experimental-features = flakes ca-references nix-command";
 	};
-	environment = {
-		systemPackages = with pkgs; [
+	nixpkgs.config.allowUnfree = true;
+	
+	environment = {						# List packages installed in system profile. To search, run:
+		systemPackages = with pkgs; [	# $ nix search wget
 			p7zip
 			pcmanfm-qt
 			softmaker-office
@@ -47,9 +43,10 @@
 			gnomeExtensions.appindicator
 			gparted
 			jetbrains.jdk
-			neofetch
+			lxappearance
 			home-manager
 			mtpfs
+			neofetch
 			nodejs
 			ntfs3g
 			openssh
@@ -90,5 +87,9 @@
 		dconf.enable = true;
 		fish.enable = true;
 		light.enable = true;
+		gnupg.agent = {
+			enable = true;
+			enableSSHSupport = true;
+		};
 	};
 }

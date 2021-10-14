@@ -1,25 +1,23 @@
 { config, pkgs, ... }:
-
 {
-	environment.shellAliases = {
-		pls				= "sudo";
-		ext-gpu			= "env DRI_PRIME=1";
+	environment = {
+		shellAliases = {
+			pls				= "sudo";
+			ext-gpu			= "env DRI_PRIME=1";
 
-		displaylink		= "cd ~/Downloads/ && nix-prefetch-url file://$PWD/displaylink.zip";
-		rebuild			= "displaylink && sudo nixos-rebuild";
-		tsu-boot		= "rebuild boot --upgrade";
-		tsu-switch		= "rebuild switch --upgrade && tsu-push-config";
+			displaylink		= "cd ~/Downloads/ && nix-prefetch-url file://$PWD/displaylink.zip";
+			tsu-boot		= "displaylink && sudo nixos-rebuild boot --upgrade && tsu-push-conf";
+			tsu-switch		= "displaylink && sudo nixos-rebuild switch --upgrade && tsu-push-conf";
 
-		tsu-conf		= "code ~/nixos-config";
-		tsu-bots		= "code ~/";
-		tsu-work		= "code ~/";
+			tsu-conf		= "code ~/nixos-config";
+			tsu-bots		= "code ~/Documents/katsu_bots";
+			tsu-work		= "code ~/Documents/Work";
 
-		tsu-clean		= "sudo nix-collect-garbage --delete-older-than 7d";
-		tsu-push-config	= "cd ~/nixos-config && git add * && git commit -m 'one more commit' && git push -u origin master";
+			tsu-clean		= "sudo nix-collect-garbage --delete-older-than 7d";
+			tsu-push-conf	= "cd ~/nixos-config && git add * && git commit -m 'one more commit' && git push -u origin master";
 
-		tg-news			= "telegram-desktop -many -workdir ~/.telegram/news";
-		tg-game 		= "telegram-desktop -many -workdir ~/.telegram/game";
-		
-
+			tg-news			= "telegram-desktop -many -workdir ~/.telegram/news";
+			tg-game 		= "telegram-desktop -many -workdir ~/.telegram/game";
+		};
 	};
 }

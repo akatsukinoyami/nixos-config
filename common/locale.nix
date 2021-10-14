@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
 	time.timeZone = "Europe/Kiev";		  #Set your time zone.
 
