@@ -7,6 +7,7 @@
 	};
 	programs = {
 		adb.enable = true;
+		dconf.enable = true;
 		fish.enable = true;
 		light.enable = true;
 		gnupg.agent = {
@@ -73,6 +74,7 @@
 			dconf2nix
 			gnome-breeze
 			gnome3.adwaita-icon-theme
+			gnome3.dconf-editor
 			gnome3.gnome-tweaks
 			gnomeExtensions.appindicator
 
