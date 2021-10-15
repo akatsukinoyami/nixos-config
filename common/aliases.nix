@@ -6,8 +6,10 @@
 			ext-gpu			= "env DRI_PRIME=1";
 
 			displaylink		= "cd ~/Downloads/ && nix-prefetch-url file://$PWD/displaylink.zip";
-			tsu-boot		= "displaylink && sudo nixos-rebuild boot --upgrade && tsu-push-conf";
-			tsu-switch		= "displaylink && sudo nixos-rebuild switch --upgrade && tsu-push-conf";
+			tsu-nix-boot	= "displaylink && sudo nixos-rebuild boot --upgrade && tsu-push-conf";
+			tsu-nix-switch	= "displaylink && sudo nixos-rebuild switch --upgrade && tsu-push-conf";
+			tsu-all-switch	= "displaylink && sudo nixos-rebuild switch --upgrade && home-manager switch && tsu-push-conf";
+			tsu-hom-switch	= "home-manager switch && tsu-push-conf";
 
 			tsu-conf		= "code ~/nixos-config";
 			tsu-bots		= "code ~/Documents/katsu_bots";
