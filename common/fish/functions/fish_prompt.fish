@@ -74,10 +74,14 @@ function tsu-help
 			set q '\033[37mAlias for executing application with nVidia GPU.'
 		case 'tsu-help'
 			set q '\033[37mPrint this message'
-		case 'tsu-boot'
+		case 'tsu-nix-boot'
 			set q '\033[32mAlias for nixos-rebuild with reboot'
-		case 'tsu-switch'
-			set q '\033[32mAlias for nixos-rebuild without reboot and push config to github'
+		case 'tsu-all-switch'
+			set q '\033[32mAlias for nixos-rebuild w/o reboot and home-manager switch and push config to github'
+		case 'tsu-nix-switch'
+			set q '\033[32mAlias for nixos-rebuild w/o reboot and push config to github'
+		case 'tsu-hom-switch'
+			set q '\033[32mAlias for home-manager switch and push config to github'
 		case 'tsu-clean'
 			set q '\033[32mAlias for clean nixos-collect-garbage'
 		case 'tsu-push-conf'
@@ -104,7 +108,7 @@ function tsu-help
 			set q '\033[31mAlias for download audio and video from youtube by specified link'
 		case '*'
 			set q 'Aliases in system:\n
-  \033[32mFor NixOS: tsu-boot, tsu-switch, tsu-clean, tsu-push-conf;
+  \033[32mFor NixOS: tsu-nix-switch, tsu-all-switch, tsu-hom-switch, tsu-clean, tsu-push-conf;
   \033[36mFor VSCode: tsu-conf, tsu-bots, tsu-work;
   \033[33mFor Python: python, python-run, python-with;
   \033[31mFor youtube-dl: youtube, youtube-mp3, youtube-both;
