@@ -17,12 +17,16 @@
       "org/gnome/gnome-session" = {
         logout-prompt = false;
       };
-      "org/gnome/mutter" = {
-        dynamic-workspaces = true;
-        workspaces-only-on-primary = true;
-      };
       "org/gnome/desktop/calendar" = {
         show-weekdate = true;
+      };
+      "/org/gnome/desktop/interface/" = {
+        clock-format = "24h";
+        gtk-theme = "Adwaita-dark";
+        show-battery-percentage = true;
+      };
+      "/org/gnome/desktop/peripherals/touchpad/" = {
+        natural-scroll = true;
       };
       "org/gnome/desktop/wm/keybindings" = {
         close = ["<Shift><Alt>q"];
@@ -47,6 +51,14 @@
         switch-to-workspace-7 = ["<Alt>7"];
         switch-to-workspace-8 = ["<Alt>8"];
         switch-to-workspace-9 = ["<Alt>9"];
+      };
+      "/org/gnome/desktop/wm/preferences/" = {
+        button-layout = "appmenu:minimize,maximize,close";
+        num-workspaces = 9;
+      }; 
+      "org/gnome/mutter" = {
+        dynamic-workspaces = true;
+        workspaces-only-on-primary = true;
       };
       "/org/gnome/shell" = {
         favorite-apps = [

@@ -17,7 +17,18 @@
 
 			tsu-clean		= "sudo nix-collect-garbage --delete-older-than 7d";
 			tsu-push-conf	= "cd ~/nixos-config && git add * && git commit -m 'one more commit' && git push -u origin master";
+			
+			python-before	= "nix-shell -p 'python38.withPackages(ps: with ps;";
+			python-run		= "python-before [ discord flask pyrogram requests tgcrypto youtube-dl ])' --run";
+			python			= "python-run python3";
+			python-shell	= "python-run fish";
 
+			youtube-shell	= "python-before [ youtube-dl ])' --run";
+			youtube			= "youtube-shell 'youtube-dl '";
+			youtube-mp3		= "youtube-shell 'youtube-dl --extract-audio --audio-format mp3 '";
+			youtube-asmr	= "cd '~/Music/asmr' &&	youtube-mp3";
+			youtube-ost		= "cd '~/Music/OST Vocal' && youtube-both";
+			
 			tg-news			= "telegram-desktop -many -workdir ~/.telegram/news";
 			tg-game 		= "telegram-desktop -many -workdir ~/.telegram/game";
 		};
