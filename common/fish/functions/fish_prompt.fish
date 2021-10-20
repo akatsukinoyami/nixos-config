@@ -6,7 +6,7 @@ function tsu-deploy
 end
 
 function python-with
-	python-before "[ $argv ] ]) --run 'fish'"
+	nix-shell -p python38.withPackages(ps: with ps; [ $argv ]) --run 
 end
 
 function youtube-both
@@ -24,30 +24,28 @@ function tsu-help
 			set q '\033[37mAlias for executing application with nVidia GPU.'
 		case 'tsu-help'
 			set q '\033[37mPrint this message'
-		case 'tsu-nix-boot'
+		case 'boot-nixos'
 			set q '\033[32mAlias for nixos-rebuild with reboot'
-		case 'tsu-all-switch'
+		case 'switch-all'
 			set q '\033[32mAlias for nixos-rebuild w/o reboot and home-manager switch and push config to github'
-		case 'tsu-nix-switch'
+		case 'switch-nixos'
 			set q '\033[32mAlias for nixos-rebuild w/o reboot and push config to github'
-		case 'tsu-hom-switch'
+		case 'switch-home'
 			set q '\033[32mAlias for home-manager switch and push config to github'
-		case 'tsu-clean'
+		case 'nixos-clean'
 			set q '\033[32mAlias for clean nixos-collect-garbage'
-		case 'tsu-push-conf'
+		case 'nixos-config-push'
 			set q '\033[32mAlias for making commit of nixos-config and push to github'
-		case 'tsu-conf'
+		case 'nixos-config'
 			set q '\033[36mAlias for open VSCode with nixos-config folder'
-		case 'tsu-bots'
+		case 'code-bots'
 			set q '\033[36mAlias for open VSCode with python-bots folder'
-		case 'tsu-work'
+		case 'code-work'
 			set q '\033[36mAlias for open VSCode with work folder'
 		case 'python-shell'
 			set q '\033[33mAlias for open shell with python and pre-defined libraries\nWrite tsu-help python-libraries to print pre-defined libraries.'
 		case 'python'
 			set q '\033[33mAlias for open (if) specified script with python and pre-defined libraries (else) python interpreter.\nWrite tsu-help python-libraries to print pre-defined libraries.'
-		case 'python-with'
-			set q '\033[33mAlias for open shell with python and specified libraries'
 		case 'python-libraries'
 			set q "\033[33mPre-defined libraries for python: $python_libraries"
 		case 'youtube'
@@ -62,8 +60,8 @@ function tsu-help
 			set q '\033[31mAlias for change directory to Music/OST and download audio and video from youtube by specified link'
 		case '*'
 			set q 'Aliases in system:\n
-  \033[32mFor NixOS: tsu-nix-switch, tsu-all-switch, tsu-hom-switch, tsu-clean, tsu-push-conf;
-  \033[36mFor VSCode: tsu-conf, tsu-bots, tsu-work;
+  \033[32mFor NixOS: boot-nixos, switch-nixos, switch-all, switch-home, nixos-clean, nixos-config-push;
+  \033[36mFor VSCode: nixos-config, code-bots, code-work;
   \033[33mFor Python: python, python-run, python-shell;
   \033[31mFor youtube-dl: youtube, youtube-mp3, youtube-both, youtube-asmr, youtube-ost;
   \033[37mOther: pls, ext-gpu, tsu-help.
