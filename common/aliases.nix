@@ -26,8 +26,8 @@
 			youtube-shell	= "python-before [ youtube-dl ])' --run";
 			youtube			= "youtube-shell 'youtube-dl '";
 			youtube-mp3		= "youtube-shell 'youtube-dl --extract-audio --audio-format mp3 '";
-			youtube-asmr	= "cd '~/Music/asmr' &&	youtube-mp3";
-			youtube-ost		= "cd '~/Music/OST Vocal' && youtube-both";
+			youtube-asmr	= "cd '/home/katsu/Music/asmr/' &&	youtube-mp3";
+			youtube-ost		= "cd '/home/katsu/Music/OST Vocal/' && youtube-both";
 			
 			tg-news			= "telegram-desktop -many -workdir ~/.telegram/news";
 			tg-game 		= "telegram-desktop -many -workdir ~/.telegram/game";
