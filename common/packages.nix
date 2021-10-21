@@ -24,9 +24,9 @@
 			vscode
 
             #INTERNET
-			firefox-wayland
 			chromium
 			google-chrome
+			firefox-wayland
 			tor-browser-bundle-bin
 
 			discord
@@ -34,7 +34,6 @@
 			slack
 
 			heroku
-			nodePackages.firebase-tools
 			ktorrent
 			wget
 			youtube-dl
@@ -58,7 +57,6 @@
 			home-manager
 			mtpfs
 			neofetch
-			nodejs
 			ntfs3g
 			openssh
 			pulseaudioFull
@@ -74,7 +72,7 @@
 			pulseeffects-legacy
 			qpaeq
 
-			#GNOME
+			#SYSTEM GNOME
 			dconf2nix
 			gnome-breeze
 			gnome3.adwaita-icon-theme
@@ -82,10 +80,14 @@
 			gnome3.gnome-tweaks
 			gnomeExtensions.appindicator
 
-			#PANTHEON
+			#SYSTEM PANTHEON
 			pantheon.elementary-camera
+			pantheon.elementary-icon-theme
+			pantheon.elementary-gtk-theme
+			pantheon.elementary-screenshot-tool
+			pantheon.elementary-wallpapers
 
-			#GTK
+			#SYSTEM GTK
 			adapta-gtk-theme
 			arc-theme
 			materia-theme
@@ -95,17 +97,21 @@
 			
 			kde-gtk-config
 			lxappearance
+
+			#SYSTEM NODE
+			nodejs
+			nodePackages.firebase-tools
 			
-			#XORG
+			#SYSTEM XORG
 			xorg.xinit
 			xorg.xcursorthemes
 
-            #FISH
+            #SYSTEM FISH
 			fish
 			fishPlugins.fzf-fish
 			fishPlugins.forgit
 
-			#SWAY
+			#SYSTEM SWAY
 			autotiling
 			mako #notification daemon
 			sway
