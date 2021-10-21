@@ -45,6 +45,7 @@
 			rhythmbox
 			ffmpeg
 			vlc
+			pantheon.elementary-camera
 			ppsspp
             
 			#SYSTEM

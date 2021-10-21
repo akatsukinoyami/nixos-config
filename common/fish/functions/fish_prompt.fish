@@ -5,28 +5,21 @@ function tsu-deploy
 	firebase deploy
 end
 
-function python-run			
-	nix-shell -p python38.withPackages(ps: with ps; [ discord flask pyrogram requests tgcrypto youtube-dl ]) --run $argv
-end
 function python				
-	python-run 'python3' $argv;
+	nix-shell -p python310.withPackages(ps: with ps; [ 'discord' 'flask' 'pyrogram' 'requests' 'tgcrypto' 'youtube-dl' ]) --run 'python3' $argv;
 end
 function python-shell		
-	python-run 'fish';
+	nix-shell -p python38.withPackages(ps: with ps; [ 'discord' 'flask' 'pyrogram' 'requests' 'tgcrypto' 'youtube-dl' ]) --run 'fish';
 end
 function python-with
 	nix-shell -p python38.withPackages(ps: with ps; [ $argv ]) --run 'fish'
 end
 
-function youtube-shell
-	echo $argv
-	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run $argv
-end
-function youtube	
-	youtube-shell 'youtube-dl' \"$argv\"
+function youtube
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run 'youtube-dl '$argv
 end
 function youtube-mp3
-	youtube-shell 'youtube-dl --extract-audio --audio-format mp3' \"$argv\"
+	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run 'youtube-dl --extract-audio --audio-format mp3 '$argv
 end
 function youtube-both
 	youtube-mp3 $argv
