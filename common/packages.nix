@@ -45,7 +45,6 @@
 			rhythmbox
 			ffmpeg
 			vlc
-			pantheon.elementary-camera
 			ppsspp
             
 			#SYSTEM
@@ -71,6 +70,10 @@
 			winetricks
 			wineWowPackages.stable
 
+			#SYSTEM AUDIO
+			pulseeffects-legacy
+			qpaeq
+
 			#GNOME
 			dconf2nix
 			gnome-breeze
@@ -78,6 +81,9 @@
 			gnome3.dconf-editor
 			gnome3.gnome-tweaks
 			gnomeExtensions.appindicator
+
+			#PANTHEON
+			pantheon.elementary-camera
 
 			#GTK
 			adapta-gtk-theme
