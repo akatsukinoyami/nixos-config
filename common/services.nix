@@ -35,6 +35,12 @@
       videoDrivers = ["displaylink" "modesetting"];
       layout = "us";
       libinput.enable = true;   	#Enable touchpad support (enabled default in most desktopManager).
+    };
+    syncthing = {
+      enable = true;
+      user = "katsu-migaming";
+      dataDir = "/home/katsu/";
+      configDir = "/home/katsu/nixos-config/sycthing";
     };		
   };
 }
