@@ -38,9 +38,7 @@
     };
     syncthing = {
       enable = true;
-      user = "katsu-migaming";
-      dataDir = "/home/katsu/";
-      configDir = "/home/katsu/nixos-config/sycthing";
+      #dataDir = "/home/katsu/";
     };		
   };
 }
