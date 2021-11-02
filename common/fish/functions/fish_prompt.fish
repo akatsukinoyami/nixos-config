@@ -6,20 +6,20 @@ function tsu-deploy
 end
 
 function python				
-	nix-shell -p python310.withPackages(ps: with ps; [ 'discord' 'flask' 'pyrogram' 'requests' 'tgcrypto' 'youtube-dl' ]) --run 'python3' $argv;
+	nix-shell -p "python39.withPackages(ps: with ps; [ discord flask pyrogram requests tgcrypto youtube-dl pysdl2 pygame ])" --run "python3 $argv";
 end
 function python-shell		
-	nix-shell -p python38.withPackages(ps: with ps; [ 'discord' 'flask' 'pyrogram' 'requests' 'tgcrypto' 'youtube-dl' ]) --run 'fish';
+	nix-shell -p "python39.withPackages(ps: with ps; [ discord flask pyrogram requests tgcrypto youtube-dl pysdl2 pygame ])" --run 'fish';
 end
 function python-with
-	nix-shell -p python38.withPackages(ps: with ps; [ $argv ]) --run 'fish'
+	nix-shell -p "python39.withPackages(ps: with ps; [ $argv ])" --run 'fish'
 end
 
 function youtube
-	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run 'youtube-dl '$argv
+	nix-shell -p "python39.withPackages(ps: with ps; [ youtube-dl ])" --run "youtube-dl '$argv'"
 end
 function youtube-mp3
-	nix-shell -p python38.withPackages(ps: with ps; [ youtube-dl ]) --run 'youtube-dl --extract-audio --audio-format mp3 '$argv
+	nix-shell -p "python39.withPackages(ps: with ps; [ youtube-dl ])" --run "youtube-dl --extract-audio --audio-format mp3 '$argv'"
 end
 function youtube-both
 	youtube-mp3 $argv
